@@ -1,4 +1,4 @@
-import { Image, View } from "react-native";
+import { ImageBackground, View } from "react-native";
 import React from "react";
 import { styles } from "./styles";
 import { ReusableText, ReusableBtn, HeightSpacer } from "../index";
@@ -8,8 +8,8 @@ import { useNavigation } from "@react-navigation/native";
 const Slides = ({ item }) => {
   const navigation = useNavigation();
   return (
-    <View>
-      <Image source={item.image} style={styles.image} />
+    <>
+      <ImageBackground source={item.image} style={styles.image} />
       <View style={styles.stack}>
         <ReusableText
           text={item.title}
@@ -17,9 +17,9 @@ const Slides = ({ item }) => {
           color={COLORS.white}
           size={SIZES.xxLarge}
         />
-        <HeightSpacer height={40} />
+        <HeightSpacer height={SIZES.large} />
         <ReusableBtn
-          onPress={() => {}}
+          onPress={() => navigation.navigate("Bottom")}
           btnText={"Get Started"}
           textColor={COLORS.white}
           width={(SIZES.width - 50) / 2.2}
@@ -28,7 +28,7 @@ const Slides = ({ item }) => {
           bdWidth={0}
         />
       </View>
-    </View>
+    </>
   );
 };
 

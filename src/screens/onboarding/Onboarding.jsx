@@ -1,7 +1,9 @@
-import { FlatList, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Carousel, { Pagination } from "react-native-snap-carousel";
 import Slides from "../../components/Onboard/Slides";
+import { SIZES } from "../../constants/theme";
+import { styles } from "./stlyes";
 
 const Onboarding = () => {
   const slides = [
@@ -23,14 +25,25 @@ const Onboarding = () => {
   ];
 
   return (
-    <SafeAreaView>
-      <FlatList
-        pagingEnabled
-        horizontal
+    <SafeAreaView style={styles.container}>
+      <Carousel
         showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => item.id}
         data={slides}
         renderItem={({ item }) => <Slides item={item} />}
+        sliderWidth={SIZES.width}
+        sliderHeight={SIZES.height}
+        itemWidth={SIZES.width}
+        loop
+        loopClonesPerSide={slides.length}
+      />
+      <Pagination
+        dotsLength={slides.length}
+        activeDotIndex={0}
+        containerStyle={styles.paginationContainer}
+        dotStyle={styles.dotStyle}
+        inactiveDotStyle={styles.inactiveDotStyle}
+        inactiveDotOpacity={0.6}
+        inactiveDotScale={0.8}
       />
     </SafeAreaView>
   );
