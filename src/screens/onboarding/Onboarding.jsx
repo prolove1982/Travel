@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import Slides from "../../components/Onboard/Slides";
@@ -6,6 +6,8 @@ import { SIZES } from "../../constants/theme";
 import { styles } from "./stlyes";
 
 const Onboarding = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
   const slides = [
     {
       id: 1,
@@ -24,21 +26,28 @@ const Onboarding = () => {
     },
   ];
 
+  const handleSnapToItem = useCallback(
+    (index) => {
+      setActiveSlide(index);
+    },
+    [setActiveSlide]
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <Carousel
-        showsHorizontalScrollIndicator={false}
+        pagingEnabled
         data={slides}
         renderItem={({ item }) => <Slides item={item} />}
         sliderWidth={SIZES.width}
         sliderHeight={SIZES.height}
         itemWidth={SIZES.width}
         loop
-        loopClonesPerSide={slides.length}
+        onSnapToItem={handleSnapToItem}
       />
       <Pagination
         dotsLength={slides.length}
-        activeDotIndex={0}
+        activeDotIndex={activeSlide}
         containerStyle={styles.paginationContainer}
         dotStyle={styles.dotStyle}
         inactiveDotStyle={styles.inactiveDotStyle}

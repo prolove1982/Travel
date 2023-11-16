@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { COLORS } from "../../constants/theme";
 
 export const reusableStyles = StyleSheet.create({
   container: {
@@ -10,4 +11,12 @@ export const reusableStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: justifyContent,
   }),
+  RecContainer: {
+    paddingTop: 30,
+  },
+  titleContainer: {
+    padding: 10,
+    backgroundColor: COLORS.lightWhite,
+    borderRadius: 12,
+  },
 });
