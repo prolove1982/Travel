@@ -66,7 +66,7 @@ const Recommendations = () => {
 
   return (
     <View style={reusableStyles.RecContainer}>
-      <View style={[reusableStyles.spaceRow("space-between"), { padding: 20 }]}>
+      <View style={[reusableStyles.spaceRow("space-between")]}>
         <ReusableText
           text={"Recommendations"}
           family={"medium"}

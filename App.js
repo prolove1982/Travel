@@ -8,6 +8,7 @@ import {
   CountryDetails,
   Recommended,
   PlaceDetails,
+  HotelDetails,
 } from "./src/screens";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomTabNavigation from "./src/navigations/BottomTabNavigation";
@@ -64,6 +65,11 @@ export default function App() {
         <Stack.Screen
           name="PlaceDetails"
           component={PlaceDetails}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HotelDetails"
+          component={HotelDetails}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

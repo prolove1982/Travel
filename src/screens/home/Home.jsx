@@ -7,6 +7,7 @@ import { TEXT, COLORS, SIZES } from "../../constants/theme";
 import { styles } from "./styles";
 import Places from "../../components/Home/Places";
 import Recommendations from "../../components/Home/Recommendations";
+import BestHotels from "../../components/Home/BestHotels";
 
 const Home = ({ navigation }) => {
   return (
@@ -39,8 +40,8 @@ const Home = ({ navigation }) => {
           />
           <HeightSpacer height={20} />
           <Places />
-
           <Recommendations />
+          <BestHotels />
         </View>
       </View>
     </SafeAreaView>

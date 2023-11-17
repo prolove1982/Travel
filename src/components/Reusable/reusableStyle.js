@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from "../../constants/theme";
+import { COLORS, SIZES } from "../../constants/theme";
 
 export const reusableStyles = StyleSheet.create({
   container: {
@@ -18,5 +18,16 @@ export const reusableStyles = StyleSheet.create({
     padding: 10,
     backgroundColor: COLORS.lightWhite,
     borderRadius: 12,
+  },
+  hotelContainer: {
+    width: SIZES.width / 2.2,
+    height: 250,
+    borderRadius: 12,
+    backgroundColor: COLORS.lightWhite,
+  },
+  imageContainer: {
+    alignItems: "center",
+    marginTop: 10,
+    height: 150,
   },
 });

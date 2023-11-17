@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, TEXT } from "../../../constants/theme";
 import { HeightSpacer, NetworkImage, ReusableText } from "../../../components/";
@@ -31,5 +31,3 @@ const Country = ({ item }) => {
 };
 
 export default Country;
-
-const styles = StyleSheet.create({});
