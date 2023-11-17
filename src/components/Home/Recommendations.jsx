@@ -6,7 +6,7 @@ import { COLORS, SIZES } from "../../constants/theme";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import HeightSpacer from "../Reusable/HeightSpacer";
-import ReusableTitle from "../Reusable/ReusableTitle";
+import ReusableTile from "../Reusable/ReusableTile";
 
 const Recommendations = () => {
   const navigation = useNavigation();
@@ -86,7 +86,7 @@ const Recommendations = () => {
           keyExtractor={(item) => item._id}
           data={recommendations}
           renderItem={({ item }) => (
-            <ReusableTitle
+            <ReusableTile
               item={item}
               onPress={() => navigation.navigate("PlaceDetails", item._id)}
             />

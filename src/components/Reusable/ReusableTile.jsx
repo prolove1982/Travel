@@ -10,7 +10,7 @@ import {
 } from "../index";
 import { COLORS, SIZES } from "../../constants/theme";
 
-const ReusableTitle = ({ item, onPress }) => {
+const ReusableTile = ({ item, onPress }) => {
   return (
     <TouchableOpacity style={reusableStyles.titleContainer} onPress={onPress}>
       <View style={[reusableStyles.spaceRow("flex-start"), { padding: 10 }]}>
@@ -52,4 +52,4 @@ const ReusableTitle = ({ item, onPress }) => {
   );
 };
 
-export default ReusableTitle;
+export default ReusableTile;

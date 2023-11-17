@@ -12,7 +12,7 @@ const Onboarding = () => {
     {
       id: 1,
       image: require("../../../assets/images/1.png"),
-      title: "The Perfect Place",
+      title: "The Best Place to Stay",
     },
     {
       id: 2,
@@ -36,7 +36,6 @@ const Onboarding = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Carousel
-        pagingEnabled
         data={slides}
         renderItem={({ item }) => <Slides item={item} />}
         sliderWidth={SIZES.width}

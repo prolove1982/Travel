@@ -84,7 +84,12 @@ const BestHotels = () => {
           contentContainerStyle={{ columnGap: SIZES.medium }}
           keyExtractor={(item) => item._id}
           data={hotels}
-          renderItem={({ item }) => <HotelCard item={item} />}
+          renderItem={({ item }) => (
+            <HotelCard
+              item={item}
+              onPress={() => navigation.navigate("HotelList")}
+            />
+          )}
         />
       </View>
     </View>

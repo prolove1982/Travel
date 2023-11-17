@@ -9,8 +9,7 @@ export const styles = StyleSheet.create({
   },
   stack: {
     position: "absolute",
-    bottom: 0,
-    marginBottom: 60,
+    bottom: 20,
     left: 20,
   },
 });
