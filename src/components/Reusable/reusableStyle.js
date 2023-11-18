@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS, SIZES } from "../../constants/theme";
+import { COLORS, SIZES, TEXT } from "../../constants/theme";
 
 export const reusableStyles = StyleSheet.create({
   container: {
@@ -34,28 +34,33 @@ export const reusableStyles = StyleSheet.create({
   textContainer: {
     padding: 10,
   },
-  overlay: {
+  overlay: (top, left, right) => ({
     position: "absolute",
-    top: 10,
-    left: 0,
-    right: 0,
+    top: top,
+    left: left,
+    right: right,
     justifyContent: "center",
-    backgroundColor: COLORS.white,
-  },
-  box: {
+  }),
+  box: (color) => ({
     width: 30,
     height: 30,
     borderRadius: 9,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: COLORS.blue,
-  },
-  box2: {
+    backgroundColor: color,
+  }),
+  box2: (color2) => ({
     width: 30,
     height: 30,
     borderRadius: 9,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: COLORS.green,
+    backgroundColor: color2,
+  }),
+  debscription: {
+    paddingVertical: 10,
+    fontFamily: "regular",
+    textAlign: "justify",
+    fontSize: TEXT.medium,
   },
 });

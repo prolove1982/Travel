@@ -5,6 +5,7 @@ import WidthSpacer from "./Reusable/WidthSpacer";
 import { reusableStyles } from "./Reusable/reusableStyle";
 import NetworkImage from "./Reusable/NetworkImage";
 import Rating from "./Reusable/Rating";
+import DescriptionText from "./Reusable/DescriptionText";
 
 export {
   ReusableText,
@@ -14,4 +15,5 @@ export {
   reusableStyles,
   NetworkImage,
   Rating,
+  DescriptionText,
 };

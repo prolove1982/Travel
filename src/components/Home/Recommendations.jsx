@@ -66,7 +66,7 @@ const Recommendations = () => {
 
   return (
     <View style={reusableStyles.RecContainer}>
-      <View style={[reusableStyles.spaceRow("space-between")]}>
+      <View style={reusableStyles.spaceRow("space-between")}>
         <ReusableText
           text={"Recommendations"}
           family={"medium"}
@@ -88,7 +88,7 @@ const Recommendations = () => {
           renderItem={({ item }) => (
             <ReusableTile
               item={item}
-              onPress={() => navigation.navigate("PlaceDetails", item._id)}
+              onPress={() => navigation.navigate("PlaceDetails", { item })}
             />
           )}
         />

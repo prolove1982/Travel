@@ -72,7 +72,7 @@ const BestHotels = () => {
           size={SIZES.large}
           color={COLORS.black}
         />
-        <TouchableOpacity onPress={() => navigation.navigate("HotelDetails")}>
+        <TouchableOpacity onPress={() => navigation.navigate("HotelList")}>
           <Feather name="list" size={20} />
         </TouchableOpacity>
       </View>
@@ -87,7 +87,7 @@ const BestHotels = () => {
           renderItem={({ item }) => (
             <HotelCard
               item={item}
-              onPress={() => navigation.navigate("HotelList")}
+              onPress={() => navigation.navigate("HotelDetails")}
             />
           )}
         />
