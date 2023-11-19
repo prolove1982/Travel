@@ -63,4 +63,21 @@ export const reusableStyles = StyleSheet.create({
     textAlign: "justify",
     fontSize: TEXT.medium,
   },
+  hotelDetailsContainer: {
+    marginTop: 20,
+    marginHorizontal: 20,
+  },
+  hotelTitleContainer: {
+    backgroundColor: COLORS.lightWhite,
+    height: 120,
+    borderRadius: 20,
+    margin: 15,
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 150,
+  },
+  hotelCard: {
+    padding: 15,
+  },
 });

@@ -78,7 +78,7 @@ const PlaceDetails = ({ navigation, route, top, left, right }) => {
       <View style={{ marginHorizontal: 20 }}>
         <HeightSpacer height={20} />
         <ReusableText
-          text={item.title}
+          text={item.location}
           family={"medium"}
           color={COLORS.black}
           size={TEXT.large}

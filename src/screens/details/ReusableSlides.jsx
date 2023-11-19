@@ -1,16 +1,27 @@
-import { FlatList, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
-import { reusableStyles } from "../Reusable/reusableStyle";
-import ReusableText from "../Reusable/ReusableText";
-import { COLORS, SIZES } from "../../constants/theme";
 import { Feather } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
-import HeightSpacer from "../Reusable/HeightSpacer";
-import ReusableTile from "../Reusable/ReusableTile";
+import AppBar from "../../components/Reusable/AppBar";
+import {
+  DescriptionText,
+  HeightSpacer,
+  NetworkImage,
+  ReusableBtn,
+  ReusableText,
+  reusableStyles,
+} from "../../components";
+import { COLORS, SIZES, TEXT } from "../../constants/theme";
+import PopulationList from "../../components/Tiles/Country/PopulationList";
+import PlaceDetails from "./PlaceDetails";
+import Carousel, { Pagination } from "react-native-snap-carousel";
 
-const Recommendations = () => {
-  const navigation = useNavigation();
-
+const ReusableSlides = ({ navigation, route, top, left, right }) => {
   const recommendations = [
     {
       _id: "64c631650298a05640539adc",
@@ -63,38 +74,38 @@ const Recommendations = () => {
       review: "24455 Reviews",
     },
   ];
+  const { item } = route.params;
+  console.log(item);
 
   return (
-    <View style={reusableStyles.RecContainer}>
-      <View style={reusableStyles.spaceRow("space-between")}>
-        <ReusableText
-          text={"Recommendations"}
-          family={"medium"}
-          size={SIZES.large}
-          color={COLORS.black}
-        />
-        <TouchableOpacity onPress={() => navigation.navigate("Recommended")}>
-          <Feather name="list" size={20} />
-        </TouchableOpacity>
-      </View>
-      <HeightSpacer height={30} />
-      <View>
-        <FlatList
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ columnGap: SIZES.medium }}
-          keyExtractor={(item) => item._id}
-          data={recommendations}
-          renderItem={({ item }) => (
-            <ReusableTile
-              item={item}
-              onPress={() => navigation.navigate("PlaceDetails", { item })}
+    <View style={{ flex: 1 }}>
+      <FlatList
+        keyExtractor={(item) => item._id}
+        data={recommendations}
+        renderItem={({ item }) => (
+          <View>
+            <NetworkImage
+              source={item.imageUrl}
+              width={"100%"}
+              height={350}
+              radius={30}
             />
-          )}
-        />
-      </View>
+          </View>
+        )}
+      />
+      <AppBar
+        title={item.title}
+        icon={"search1"}
+        color={COLORS.white}
+        color2={COLORS.white}
+        top={40}
+        left={20}
+        right={20}
+        onPress={() => navigation.goBack()}
+        onPress2={() => navigation.navigate("Search")}
+      />
     </View>
   );
 };
 
-export default Recommendations;
+export default ReusableSlides;

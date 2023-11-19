@@ -11,6 +11,7 @@ import {
   HotelDetails,
   HotelList,
   HotelSearch,
+  ReusableSlides,
 } from "./src/screens";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomTabNavigation from "./src/navigations/BottomTabNavigation";
@@ -82,6 +83,11 @@ export default function App() {
         <Stack.Screen
           name="HotelSearch"
           component={HotelSearch}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Slides"
+          component={ReusableSlides}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

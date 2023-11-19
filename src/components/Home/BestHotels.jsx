@@ -23,6 +23,16 @@ const BestHotels = () => {
       location: "Miami Beach, FL",
     },
     {
+      _id: "64c675793cfa5e847bcd5436",
+      country_id: "64c62bfc65af9f8c969a8d04",
+      title: "Urban Chic Boutique ",
+      imageUrl:
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/27448235.jpg?k=e07992b161adbfb4f35b686486365d3126a89536572f2bba96a8607644f42e57&o=&hp=1",
+      rating: 4.8,
+      review: "2312 Reviews",
+      location: "San Francisco, CA",
+    },
+    {
       _id: "64c675183cfa5e847bcd5433",
       country_id: "64c62bfc65af9f8c969a8d04",
       title: "Mountain Lodge",
@@ -87,7 +97,7 @@ const BestHotels = () => {
           renderItem={({ item }) => (
             <HotelCard
               item={item}
-              onPress={() => navigation.navigate("HotelDetails")}
+              onPress={() => navigation.navigate("HotelDetails", { item })}
             />
           )}
         />

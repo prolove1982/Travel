@@ -21,7 +21,7 @@ const Recommended = ({ navigation, top, left, right }) => {
       _id: "64d062a3de20d7c932f1f70a",
       country_id: "64c62bfc65af9f8c969a8d04",
       title: "Statue of Liberty",
-      location: "New York, NY, USA",
+      location: "Liberty Island, New York Harbor",
       imageUrl:
         "https://d326fntlu7tb1e.cloudfront.net/uploads/c3a8b882-b176-47f0-aec5-a0a49bf42fcd-statue-of-liberty-1.webp",
       rating: 4.8,
